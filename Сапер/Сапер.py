@@ -26,7 +26,7 @@ class Game:
                         pass
     
     def endGame(self):
-        os.system('cls')
+        #os.system('cls')
         for i in range(self.size):
             for j in range(self.size):
                 if self.field[j][i] == '¤':
@@ -44,14 +44,14 @@ class Game:
 
     def PrintField(self):
         input()
-        os.system('cls||clear')
+        #os.system('cls||clear')
         for i in range(self.size):
             for j in range(self.size):
                 print(self.fieldVisible[i][j], end = ' ')
             print()
 
     def PrintFieldGod(self):
-        os.system('cls||clear')
+        #os.system('cls||clear')
         print()
         for i in range(self.size):
             for j in range(self.size):
@@ -80,10 +80,11 @@ class Game:
         pass
 
 def main():        
-    size = 20
-    bomb = 20
+    size = 10
+    bomb = 10
     game = Game(size, bomb)
     game.StartGame()
+    #game.PrintField()
     game.PrintFieldGod()
     z = [int(x) for x in input().split(" ")]
     game.OpenField(z)
