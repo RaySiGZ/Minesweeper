@@ -1,4 +1,3 @@
-﻿#пишем сапера, всем похуй
 import random
 from random import randint as rd
 import os
@@ -76,20 +75,29 @@ class Game:
         else: 
             self.endGame()
 
-    def Flag(self):
+    def Flag(self, z):
+      pass
+        
+    def Input(self):
+      z = [int(x) for x in input().split(" ")]
+      if z[0] == 0:
+        z = z[1:]
+        self.OpenField(z)
+      if z[0] == 1:
         pass
+        #self.Flag(z)
+      #self.PrintField()
+      self.PrintFieldGod()
 
 def main():        
     size = 10
     bomb = 10
     game = Game(size, bomb)
     game.StartGame()
-    #game.PrintField()
+    #game.PrintField
     game.PrintFieldGod()
-    z = [int(x) for x in input().split(" ")]
-    game.OpenField(z)
-    game.PrintFieldGod()
-    input()
+    while True:
+      game.Input()           
 
 if __name__ == "__main__":
     main()
